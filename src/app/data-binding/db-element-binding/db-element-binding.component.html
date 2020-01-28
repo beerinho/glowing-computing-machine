@@ -1,0 +1,9 @@
+<h2>Element Binding</h2>
+<p>We can also bind to elements of the DOM using []</p>
+<p>
+  For example, this button below will be disabled and re-enabled every 2 seconds
+</p>
+<!-- Bootstrap classes -->
+<button [disabled]="isButtonDisabled" class="btn btn-primary">
+  {{ buttonText }}
+</button>

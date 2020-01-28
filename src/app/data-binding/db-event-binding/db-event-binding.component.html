@@ -1,0 +1,30 @@
+<h2>Event binding</h2>
+<p>You can bind to any event on the HTML elements using ()</p>
+<button (click)="onClick()">Click me for a surprise</button>
+<h1>{{ surpriseText }}</h1>
+
+<div
+  [class]="colourChange"
+  (mouseover)="onChangeColour()"
+  (mouseleave)="onRevertColour()"
+>
+  Hover on me to change my colour.
+</div>
+
+<p>
+  You can use $event as an argument in functions to get the event that was
+  triggered, this is a reserved keyword.
+</p>
+<p>For example, you can use $event to bind to the input here:</p>
+<input type="text" (input)="onEnterWord($event)" />
+<p>
+  <strong>{{ eventWord }}</strong>
+</p>
+
+<h2>Two way binding</h2>
+<p>
+  Two way binding is a simple way to update multiple places at once. You use
+  [()] for two way binding.
+</p>
+<input [(ngModel)]="twoWayInput" type="text" />
+{{ twoWayInput }}

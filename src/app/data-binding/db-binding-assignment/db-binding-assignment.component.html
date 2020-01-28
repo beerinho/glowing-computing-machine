@@ -1,0 +1,19 @@
+<h2>Binding Assignment</h2>
+<input type="text" [(ngModel)]="username" (input)="validateInput()" />
+<p>{{ username }}</p>
+<button [disabled]="isButtonDisabled" (click)="onResetUsername()">
+  Click to reset
+</button>
+
+<h2>Max's solution</h2>
+
+<label>Username</label>
+<input type="text" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<button
+  class="btn btn-primary"
+  [disabled]="username === ''"
+  (click)="username = ''"
+>
+  Reset username
+</button>
