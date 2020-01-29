@@ -1,0 +1,67 @@
+<h2>Directives</h2>
+<p>
+  Directives can be used to change the DOM, *ngIf is a very useful version of
+  this, you can also use the follow syntax to create an else statement:
+</p>
+<p>*ngIf="variableIsTrue; else somethingElse"</p>
+<p>And then use ng-template with the id somethingElse</p>
+<button class="btn" (click)="isShowingMessage = !isShowingMessage">
+  <span *ngIf="isShowingMessage; else hidden">
+    Click to hide
+  </span>
+  <ng-template #hidden>
+    <span>
+      Click to reveal
+    </span>
+  </ng-template>
+</button>
+<h1 *ngIf="isShowingMessage; else noMessage">Hello!</h1>
+<ng-template #noMessage>
+  <p>No message</p>
+</ng-template>
+<hr />
+<h4>ngClass</h4>
+<p>
+  You and dynamically change the css classes with [ngClass] (you can also do it
+  with [ngStyle] but it's better to have separate styles). It will receive a
+  javascript object in the form of "{{ "{" }}" css-class : truthyCondition "{{
+    "}"
+  }}"
+</p>
+<p>For example</p>
+<p [ngClass]="{ green: divBackground === 'green' }">
+  This div will randomly change colour;
+</p>
+<hr />
+<h4>ngFor</h4>
+<p>You can use ngFor to loop through an array</p>
+<p>
+  You can also extract the index in a similar way, using the syntax *ngFor=" let
+  name of variable; let indexName = index", indexName can be anything you like,
+  but is normally "i"
+</p>
+<button (click)="onAddNewNumber()">Add another number</button>
+<ul *ngFor="let number of numbers">
+  <li>{{ number }}</li>
+</ul>
+
+<hr />
+
+<h2>Directives Assignment</h2>
+<button (click)="onDisplayDetails()">
+  <span *ngIf="isDisplayingDetails; else hideDetails">Hide Details</span>
+  <ng-template #hideDetails>
+    <span> Display details</span>
+  </ng-template>
+</button>
+<p *ngIf="isDisplayingDetails">
+  Secret password: Tuna
+</p>
+<ul *ngFor="let count of clickCount; let i = index">
+  <li
+    [ngStyle]="{ backgroundColor: getColour(i) }"
+    [ngClass]="{ 'white-text': i > 3 }"
+  >
+    {{ count }}
+  </li>
+</ul>

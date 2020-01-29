@@ -12,6 +12,7 @@ import { DbStringInterpolationComponent } from "./data-binding/db-string-interpo
 import { DbElementBindingComponent } from "./data-binding/db-element-binding/db-element-binding.component";
 import { DbEventBindingComponent } from "./data-binding/db-event-binding/db-event-binding.component";
 import { DbBindingAssignmentComponent } from './data-binding/db-binding-assignment/db-binding-assignment.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DbBindingAssignmentComponent } from './data-binding/db-binding-assignme
     DbStringInterpolationComponent,
     DbElementBindingComponent,
     DbEventBindingComponent,
-    DbBindingAssignmentComponent
+    DbBindingAssignmentComponent,
+    DirectivesComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
